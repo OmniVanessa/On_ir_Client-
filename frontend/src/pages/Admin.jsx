@@ -11,7 +11,7 @@ export default function Admin() {
   useEffect(() => {
     const fetchCurrentStatus = async () => {
       try {
-        const response = await fetch('http://localhost:8000/client/get-status');
+        const response = await fetch('/api/client/get-status');
         if (response.ok) {
           const data = await response.json();
           setStatus(data.category);
@@ -28,7 +28,7 @@ export default function Admin() {
   const handleUpdate = async () => {
     setIsUpdating(true);
     try {
-      const response = await fetch('http://localhost:8000/admin/update-status',{
+      const response = await fetch('/api/admin/update-status',{
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body:JSON.stringify({
