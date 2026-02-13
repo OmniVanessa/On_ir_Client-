@@ -8,7 +8,7 @@ export default function Client() {
 
     useEffect(() => {
         const fetchData = () => {
-            fetch('http://localhost:8000/client/get-status')
+            fetch('/api/client/get-status')
                 .then(res => res.json())
                 .then(data => setStatusData(data))
                 .catch((err) => console.error("Error al conectar con el servidor:", err));
